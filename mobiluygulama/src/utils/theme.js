@@ -15,7 +15,7 @@ const colors={
     atasozleriDark: "#4F3822",
     atasozleriMedium: "#BB8E62",
     atasozleriLight: "#F9F5F1",
-    textdark: "#0A151F",
+    textDark: "#0A151F",
     textMedium: "#48515B",
     textLight: "#758292",
 

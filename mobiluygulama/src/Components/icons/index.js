@@ -1,7 +1,5 @@
 export { default as BookmarkIcon } from './BookmarkIcon'
+export { default as Close } from './Close'
 export { default as HistoryIcon } from './HistoryIcon'
-export { default as SearchIcon } from './SearchIcon'
 export { default as Logo } from './Logo'
-
-export class SvgSearchIcon {
-}
+export { default as SearchIcon } from './SearchIcon'

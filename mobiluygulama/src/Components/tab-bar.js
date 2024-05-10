@@ -1,6 +1,4 @@
 import React from "react";
-import { View} from 'react-native';
-
 import Button from "./button";
 
 import SvgSearchIcon from "./icons/SearchIcon";
@@ -15,7 +13,14 @@ import theme from "../utils/theme";
 
 function TabBar({ state, descriptors, navigation }) {
     return (
-        <View style={{ flexDirection: 'row' }}>
+        <Box
+            bg="white"
+            flexDirection="row"
+            style={{
+            shadowColor: '#000',
+            shadowOpacity:0.16,
+            shadowRadius:24,
+        }}>
             {state.routes.map((route, index) => {
                 const { options } = descriptors[route.key];
                 const label =
@@ -40,6 +45,7 @@ function TabBar({ state, descriptors, navigation }) {
                 };
 
                 return label === 'Search' ? (
+                    //search button
                     <Box key={label} p={15} mt={-15}  borderRadius={9999} bg="white" >
                         <Button
                             key={label}
@@ -53,6 +59,7 @@ function TabBar({ state, descriptors, navigation }) {
 
 
                 ): (
+                    //tab button
                     <Button
                         key={label}
                         pt={6}
@@ -60,13 +67,22 @@ function TabBar({ state, descriptors, navigation }) {
                         height={56}
                         flex={1}
                         onPress={onPress}>
-                        {label === 'History' && <SvgHistoryIcon  stroke={theme.colors.gray} />}
-                        {label === 'Favorite' && <SvgBookmarkIcon  stroke={theme.colors.gray} />}
-                        <Box size={3} bg={isFocused ? 'red':'white'} mt={6}/>
+                        {label === 'History' && (
+                            <SvgHistoryIcon
+                                color={isFocused ? theme.colors.red : theme.colors.textLight}
+                        />
+                        )}
+                        {label === 'Favorite' && (
+                            <SvgBookmarkIcon
+                                color={isFocused ? theme.colors.red : theme.colors.textLight}
+                            />
+                            )}
+                        {/*inducator*/}
+                        <Box size={4} bg={isFocused ? 'red':'white'} mt={6} borderRadius={9999}/>
                     </Button>
                 )
             })}
-        </View>
+        </Box>
     );
 }
 

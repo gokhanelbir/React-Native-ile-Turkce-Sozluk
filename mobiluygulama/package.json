@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "svgr": "svgr ./src/icons -d ./src/Components/icons --native --icon --svg-props 'width=24,height=24, className="
+    "svgr": "svgr ./src/icons -d ./src/Components/icons --native --icon --no-svgo"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.20",

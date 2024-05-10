@@ -1,11 +1,14 @@
-import {Text, View} from "react-native";
+import {SafeAreaView} from "react-native";
 import * as React from "react";
+
+import Box from "../Components/box";
+import Text from "../Components/text";
 
 function DetailView() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Box as={SafeAreaView} flex={1} >
             <Text>Detay</Text>
-        </View>
+        </Box>
     );
 }
 
